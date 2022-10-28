@@ -3,6 +3,7 @@ package refactoring.servlet;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import ru.akirakozov.sd.refactoring.dao.ProductDAO;
+import ru.akirakozov.sd.refactoring.service.HtmlFormingService;
 import ru.akirakozov.sd.refactoring.servlet.AddProductServlet;
 import ru.akirakozov.sd.refactoring.servlet.GetProductsServlet;
 
@@ -19,9 +20,9 @@ public class AddAndGetServletTest extends AbstractServletTest {
     protected final GetProductsServlet getServlet;
 
     public AddAndGetServletTest() {
-        ProductDAO productDAO = new ProductDAO();
-        this.addServlet = new AddProductServlet(productDAO);
-        this.getServlet = new GetProductsServlet(productDAO);
+        HtmlFormingService htmlFormingService = new HtmlFormingService(new ProductDAO());
+        this.addServlet = new AddProductServlet(htmlFormingService);
+        this.getServlet = new GetProductsServlet(htmlFormingService);
     }
 
     @Test
