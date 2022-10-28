@@ -2,7 +2,7 @@ package refactoring.servlet;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import ru.akirakozov.sd.refactoring.dao.ProductDAO;
+import ru.akirakozov.sd.refactoring.dao.dml.ProductDAO;
 import ru.akirakozov.sd.refactoring.service.HtmlFormingService;
 import ru.akirakozov.sd.refactoring.servlet.AddProductServlet;
 import ru.akirakozov.sd.refactoring.servlet.QueryServlet;

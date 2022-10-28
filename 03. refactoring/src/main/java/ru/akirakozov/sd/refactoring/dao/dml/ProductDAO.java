@@ -1,5 +1,6 @@
-package ru.akirakozov.sd.refactoring.dao;
+package ru.akirakozov.sd.refactoring.dao.dml;
 
+import ru.akirakozov.sd.refactoring.dao.DAO;
 import ru.akirakozov.sd.refactoring.model.Product;
 
 import java.sql.ResultSet;

@@ -1,6 +1,6 @@
 package ru.akirakozov.sd.refactoring.service;
 
-import ru.akirakozov.sd.refactoring.dao.ProductDAO;
+import ru.akirakozov.sd.refactoring.dao.dml.ProductDAO;
 import ru.akirakozov.sd.refactoring.model.Product;
 
 import java.io.PrintWriter;
