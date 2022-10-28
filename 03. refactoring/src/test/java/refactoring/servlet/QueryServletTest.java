@@ -57,6 +57,9 @@ public class QueryServletTest extends AbstractServletTest {
                         "Number of products: \n" +
                         "</body></html>", 3
         );
+
+        performQueryRequest("abracadabra",
+                "Unknown command: abracadabra", -1);
     }
 
     protected void performAddRequest(String name, Long price) throws IOException {
