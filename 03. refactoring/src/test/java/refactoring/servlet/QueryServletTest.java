@@ -2,6 +2,7 @@ package refactoring.servlet;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import ru.akirakozov.sd.refactoring.dao.ProductDAO;
 import ru.akirakozov.sd.refactoring.servlet.AddProductServlet;
 import ru.akirakozov.sd.refactoring.servlet.QueryServlet;
 
@@ -18,8 +19,10 @@ public class QueryServletTest extends AbstractServletTest {
     protected final QueryServlet queryServlet;
 
     public QueryServletTest() {
-        this.addServlet = new AddProductServlet();
-        this.queryServlet = new QueryServlet();
+        ProductDAO productDAO = new ProductDAO();
+
+        this.addServlet = new AddProductServlet(productDAO);
+        this.queryServlet = new QueryServlet(productDAO);
     }
 
     @Test
@@ -69,7 +72,7 @@ public class QueryServletTest extends AbstractServletTest {
         verify(response.getWriter()).println("OK");
     }
 
-    protected void performQueryRequest(String command, String expectedResponse, int result) throws IOException {
+    protected void performQueryRequest(String command, String expectedResponse, Integer result) throws IOException {
         HttpServletRequest request = mockRequest(Map.of(
                 "command", command
         ));

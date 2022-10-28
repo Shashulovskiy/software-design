@@ -1,6 +1,7 @@
 package refactoring.servlet;
 
 import org.junit.jupiter.api.Test;
+import ru.akirakozov.sd.refactoring.dao.ProductDAO;
 import ru.akirakozov.sd.refactoring.servlet.AddProductServlet;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,7 @@ public class AddProductServletTest extends AbstractServletTest {
     protected final AddProductServlet servlet;
 
     public AddProductServletTest() {
-        this.servlet = new AddProductServlet();
+        this.servlet = new AddProductServlet(new ProductDAO());
     }
 
     @Test
