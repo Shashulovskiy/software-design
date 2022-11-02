@@ -25,7 +25,7 @@ class LRUCache<K, V>(private val capacity: Int): Cache<K, V> {
 
         validateAccessedElementIsLast(res?.value, key)
         validateSize()
-        assert(initialSize == cache.size) { "cache size changed after insert" }
+        assert(initialSize == cache.size) { "cache size changed after get" }
 
         return res?.value
     }
