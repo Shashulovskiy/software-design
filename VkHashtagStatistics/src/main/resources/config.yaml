@@ -1,0 +1,4 @@
+protocol: https
+apiHost: api.vk.com
+accessToken: key
+apiVersion: 5.131
