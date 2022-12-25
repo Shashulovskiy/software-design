@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<form th:action="@{/v1/taskList}" th:object="${taskList}" method="post">
+    <div>
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" placeholder="Enter task list name.." />
+        <input type="submit" value="Submit"/>
+    </div>
+</form>
+<table border="1" style="width:300px">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td></td>
+    </tr>
+    <tr th:each="taskList : ${taskLists}">
+        <td th:text="${taskList.id}">Id</td>
+        <td th:text="${taskList.name}">Name</td>
+        <td>
+            <form th:action="'/v1/taskList/' + ${taskList.id}" method="get">
+                <input type="submit" value="View"/>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
