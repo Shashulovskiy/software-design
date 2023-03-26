@@ -1,0 +1,4 @@
+package stocks
+
+class StocksServiceImpl {
+}
